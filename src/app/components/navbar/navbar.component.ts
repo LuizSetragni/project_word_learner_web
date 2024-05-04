@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -9,14 +9,12 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   showNavBar: boolean = true;
+  constructor(private router: Router) {}
 
-  constructor(private router: Router){}
-
-  ngOnInit(): void {
-    this.router.events.subscribe((event) => {
-      this.showNavBar = this.router.url === '/login' ? false : true;
-    });
+  displayNavbar(): boolean {
+    const routesNoDisplayNavBAr = ['/new-user', '/user-register']
+    return !routesNoDisplayNavBAr.includes(this.router.url); 
   }
 }
