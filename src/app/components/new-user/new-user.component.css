@@ -89,10 +89,10 @@
 }
 
 .separator-line {
-    align-self: flex-end; /* Alinha a linha ao final do elemento pai */
-    border-top: 1px solid #d0d4e4; /* Define uma borda superior sólida vermelha */
-    height: 50%; /* Define a altura da linha */
-    width: 100%; /* Garante que a linha ocupe toda a largura do elemento pai */
+    align-self: flex-end;
+    border-top: 1px solid #d0d4e4;
+    height: 50%;
+    width: 100%;
 }
 
 .register-data{
