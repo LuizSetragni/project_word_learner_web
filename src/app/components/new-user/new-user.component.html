@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="login">
+        <div class="register">
+            <div class="header">
+                <div class="title">Bem vindo ao Word Learner</div>
+                <div class="subtitle">Comece já - é grátis. Venha aprender
+                    com a gente.</div>
+            </div>
+            <div class="content">
+                <button class="button btn-google">
+                    <img class="icon-google"
+                        src="https://dapulse-res.cloudinary.com/image/upload/remote_logos/995426/google-icon.svg"
+                        alt="Logo do Google" />
+                    <span>Continue com o Google</span>
+                </button>
+                <div class="separator">
+                    <div class="separator-line"></div>
+                    <span>Ou</span>
+                    <div class="separator-line"></div>
+                </div>
+                <div class="register-data">
+                    <input class="email-register" type="email" placeholder="example@email.com" [(ngModel)]="email">
+                    <button class="button" (click)="emailExist(email)">Continuar</button>
+                </div>
+            </div>
+        </div>
+        <div class="enter">Já tem uma conta? <a routerLink="/login-word-learner">Entrar</a></div>
+    </div>
+    <div class="left-square"></div>
+</div>

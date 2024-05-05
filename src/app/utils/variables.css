@@ -1,0 +1,13 @@
+:root{
+    /* colors */
+    --primary-color: rgb(0, 38, 100);
+    --second-color: rgb(255, 255, 255);
+    --third-color: rgb(177, 35, 50);
+
+    --color-text: rgb(0, 0, 0);
+    
+    /* sizes */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-xxl: 48px;
+}
