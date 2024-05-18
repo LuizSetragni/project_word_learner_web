@@ -1,0 +1,24 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f7f7f7;
+    color: var(--third-color);
+    border-bottom: rgb(220, 220, 220) solid 1px;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+.footer-content nav {
+    margin-top: 10px;
+}
+  
+.footer-content nav a {
+    color: var(--third-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-content nav a:hover {
+    text-decoration: underline;
+}
