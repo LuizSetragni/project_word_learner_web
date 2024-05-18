@@ -1,0 +1,11 @@
+<div class="team-container">
+    <h1>Conheça Nossa Equipe</h1>
+    <div class="team-members">
+      <div class="team-member" *ngFor="let member of teamMembers" [ngStyle]="{'background-image': 'url(' + member.photo + ')'}">
+        <div class="member-info">
+          <h2>{{ member.name }}</h2>
+          <p>{{ member.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
