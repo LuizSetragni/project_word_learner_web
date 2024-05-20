@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-user-register',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './user-register.component.css'
 })
 export class UserRegisterComponent {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
 
 }
