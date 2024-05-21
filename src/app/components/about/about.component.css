@@ -1,0 +1,72 @@
+.about-us-container {
+    color: #323338;
+    padding: 132px 0 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.about-us-container p {
+    line-height: 1.7;
+    font-weight: 320;
+    font-size: 1.2rem;
+}
+
+.about-us-container .row {
+    display: flex;
+    align-items: center;
+}
+
+.about-us-container .row {
+    align-items: center;
+    align-content: center;
+    margin-bottom: -33px !important;
+}
+
+.about-us-container .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about-us-container h1 {
+    font-family: Poppins,sans-serif !important;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.about-us-container h1 span {
+    font-weight: 700;
+}
+
+.about-us-container .side-left {
+    position: relative;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    max-width: 1240px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
