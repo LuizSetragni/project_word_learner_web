@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { EmailValidator, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserService } from '../../services/user.service';
 import { response } from 'express';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user/user.service';
 
 
 @Component({

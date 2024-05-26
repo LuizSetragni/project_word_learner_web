@@ -1,25 +1,52 @@
 <div class="container">
     <div class="square">
-        <span class="title">Fazer login em sua conta</span>
+      <span class="title">Fazer login em sua conta</span>
+      
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="register-data">
+        <label for="username">Insira seu nome de usuário</label>
+        <input 
+          id="username"
+          class="email-register" 
+          type="text" 
+          formControlName="username" 
+          placeholder="Nome de Usuário">
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+          <small class="error-message">Nome de usuário é obrigatório.</small>
+        </div>
         
-        <div class="register-data">
-            <label>Insira seu email</label>
-            <input class="email-register" type="email" placeholder="example@email.com">
-            <label for="password">Senha:</label>
-            <input class="email-register" type="password" placeholder="senha">
-            <button class="button">Continuar</button>
+        <label for="password">Senha:</label>
+        <div class="password-container">
+          <input 
+            id="password" 
+            class="email-register" 
+            [type]="passwordVisible ? 'text' : 'password'"
+            formControlName="password" 
+            placeholder="Senha">
+          <button type="button" (click)="togglePasswordVisibility()" class="toggle-password-button">
+            {{ passwordVisible ? 'Ocultar' : 'Mostrar' }}
+          </button>
         </div>
-        <div class="separator">
-            <div class="separator-line"></div>
-            <div class="text-separator">Ou entrar via</div>
-            <div class="separator-line"></div>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <small class="error-message">Senha é obrigatória.</small>
         </div>
-        <button class="button btn-google">
-            <img class="icon-google"
-                src="https://dapulse-res.cloudinary.com/image/upload/remote_logos/995426/google-icon.svg"
-                alt="Logo do Google" />
-            <span>Google</span>
-        </button>
-        <span>Ainda não tem uma conta? <a routerLink="/user-register">Cadastre-se</a></span>
+        
+        <button id="submit-button" type="submit" class="button" [disabled]="loginForm.invalid">Continuar</button>
+      </form>
+      
+      <div class="separator">
+        <div class="separator-line"></div>
+        <div class="text-separator">Ou entrar via</div>
+        <div class="separator-line"></div>
+      </div>
+      
+      <button class="button btn-google">
+        <img class="icon-google"
+          src="https://dapulse-res.cloudinary.com/image/upload/remote_logos/995426/google-icon.svg"
+          alt="Logo do Google" />
+        <span>Google</span>
+      </button>
+      
+      <span>Ainda não tem uma conta? <a routerLink="/user-register">Cadastre-se</a></span>
     </div>
-</div>
+  </div>
+  
