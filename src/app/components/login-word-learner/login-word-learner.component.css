@@ -95,3 +95,9 @@ label{
 .btn-google:hover {
     background-color: #f0f0f0;
 }
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+  }
