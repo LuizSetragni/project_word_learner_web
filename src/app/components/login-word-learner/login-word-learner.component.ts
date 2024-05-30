@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { JwtUtils } from '../../utils/jwtUtils';
 
 @Component({
   selector: 'app-login-word-learner',
@@ -19,7 +20,8 @@ getErrorMessage(arg0: string) {
   passwordVisible: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private loginService: LoginService, private router: Router, 
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -44,8 +46,9 @@ getErrorMessage(arg0: string) {
 
     this.loginService.login(credentials).subscribe(
       response => {
-        console.log('Login Bem-Sucedido', response);
+        console.log('Login Bem-Sucedido', response.access);
         localStorage.setItem('token', response.access);
+        JwtUtils.decodeJwt(response.access)
         this.router.navigate(['/home']);
       },
       error => {
