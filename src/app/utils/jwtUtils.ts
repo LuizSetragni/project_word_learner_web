@@ -1,7 +1,7 @@
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 export class JwtUtils {
-  static globalUserId: string | null = null;
+  static globalUserId: number | null = null;
   static globalName: string | null = null;
   static globalEmail: string | null = null;
   static isLogado: boolean = false;

@@ -1,1 +1,57 @@
-<p>home works!</p>
+<div class="container">
+    <div class="square-vertical-left">
+        <div class="square-horizontal">
+
+        </div>
+        <div class="square-horizontal">
+
+        </div>
+    </div>
+    <div class="square-vertical-rigth">
+        <div class="square-horizontal">
+
+        </div>
+        <div class="square-horizontal">
+            <div class="week-component">
+                <span> Palavras aprendidas na semana: </span>
+                <div class="box-week">
+                    <div class="box-day">
+                        <small class="title-day">Domingo</small>
+                        <div class="day-qnt">{{wordCounts?.Sunday}}</div>
+                    </div>
+                    <div class="box-day">
+                        <small class="title-day">Segunta</small>
+                        <div class="day-qnt">{{wordCounts?.Monday}}</div>
+                    </div>
+                    <div class="box-day">
+                        <small class="title-day">Terça</small>
+                        <div class="day-qnt">{{wordCounts?.Tuesday}}</div>
+                    </div>
+                    <div class="box-day">
+                        <small class="title-day">Quarta</small>
+                        <div class="day-qnt">{{wordCounts?.Wednesday}}</div>
+                    </div>
+                    <div class="box-day">
+                        <small class="title-day">Quinta</small>
+                        <div class="day-qnt">{{wordCounts?.Thursday}}</div>
+                    </div>
+                    <div class="box-day">
+                        <small class="title-day">Sexta</small>
+                        <div class="day-qnt">{{wordCounts?.Friday}}</div>
+                    </div>
+                    <div class="box-day">
+                        <small class="title-day">Sábado</small>
+                        <div class="day-qnt">{{wordCounts?.Saturday}}</div>
+                    </div>
+                    <div class="box-media">
+                        <div class="title-media">
+                            Media semanal:
+                        </div>
+                        <div>
+                            {{wordCounts?.average}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

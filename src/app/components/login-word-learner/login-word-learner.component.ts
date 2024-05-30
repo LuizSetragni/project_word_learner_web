@@ -48,7 +48,6 @@ getErrorMessage(arg0: string) {
       response => {
         console.log('Login Bem-Sucedido', response.access);
         localStorage.setItem('token', response.access);
-        JwtUtils.decodeJwt(response.access)
         this.router.navigate(['/home']);
       },
       error => {
