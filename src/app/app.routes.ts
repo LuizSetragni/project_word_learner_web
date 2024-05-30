@@ -8,12 +8,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { TeamComponent } from './components/team/team.component';
 
 export const routes: Routes = [
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
+    {path: 'home', component: HomeComponent}, // so ir pra home se tiver logado
+    {path: 'about', component: AboutComponent}, // poder acessar o about ao entrar no word-learner
     {path: 'user-register', component: UserRegisterComponent},
     {path: 'new-user', component: NewUserComponent},
     {path: 'login-word-learner', component: LoginWordLearnerComponent},
-    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: '', redirectTo: '/about', pathMatch: 'full'},
     { path: 'team', component: TeamComponent },
     {path: '**', component: PageNotFoundComponent}
 ];
