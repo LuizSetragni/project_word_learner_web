@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { WeekCountInterface } from '../../interfaces/weekCount.interface';
 import { WordListInterface } from '../../interfaces/wordList.interface';
 import { wordInterface } from '../../interfaces/word.interface';
+import { LinkInterface } from '../../interfaces/link.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,13 @@ export class WordService {
     const url = `${this.API_URL}/word/detail/${wordId}/`;
 
     return this.httpClient.get<wordInterface>(url, { headers });
+  }
+
+  getLinkList(userId: number): Observable<LinkInterface[]>{
+    const token = localStorage.getItem('token'); 
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/words/links/${userId}/`;
+
+    return this.httpClient.get<LinkInterface[]>(url, {headers});
   }
 }

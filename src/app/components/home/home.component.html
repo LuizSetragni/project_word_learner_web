@@ -3,7 +3,7 @@
         <div class="square-horizontal">
             <div class="list-component">
                 <div>
-                    <input type="text" placeholder="Search words..." [(ngModel)]="searchTerm" (input)="filterWordList()"/>
+                    <input type="text" placeholder="Search words..." [(ngModel)]="searchTermWord" (input)="filterWordList()"/>
                   </div>
                   <ul>
                     <li *ngFor="let word of filteredWordList">{{ word.content }}</li>
@@ -11,7 +11,12 @@
             </div>
         </div>
         <div class="square-horizontal">
-
+            <div>
+                <input type="text" placeholder="Search words..." [(ngModel)]="searchTermLink" (input)="filterLinkList()"/>
+              </div>
+              <ul>
+                <li *ngFor="let content of filteredLinkList">{{ content.link + "|" + content.count }}</li>
+              </ul>
         </div>
     </div>
     <div class="square-vertical-rigth">
