@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { WeekCountInterface } from '../../interfaces/weekCount.interface';
+import { WordListInterface } from '../../interfaces/wordList.interface';
+import { wordInterface } from '../../interfaces/word.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +14,27 @@ export class WordService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getWordCountLastWeek(userId: number): Observable<any> {
+  getWordCountLastWeek(userId: number): Observable<WeekCountInterface> {
     const token = localStorage.getItem('token'); 
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const url = `${this.API_URL}/words/count/last_week/${userId}/`;
 
     return this.httpClient.get<WeekCountInterface>(url, { headers });
+  }
+
+  getWordList(userId: number): Observable<WordListInterface[]> {
+    const token = localStorage.getItem('token'); 
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/words/contents/${userId}/`;
+
+    return this.httpClient.get<{word_list: WordListInterface[]}>(url, { headers }).pipe(map(x => x.word_list));
+  }
+
+  getWordContent(wordId: number): Observable<wordInterface> {
+    const token = localStorage.getItem('token'); 
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/word/detail/${wordId}/`;
+
+    return this.httpClient.get<wordInterface>(url, { headers });
   }
 }

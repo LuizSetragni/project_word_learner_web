@@ -1,7 +1,14 @@
 <div class="container">
     <div class="square-vertical-left">
         <div class="square-horizontal">
-
+            <div class="list-component">
+                <div>
+                    <input type="text" placeholder="Search words..." [(ngModel)]="searchTerm" (input)="filterWordList()"/>
+                  </div>
+                  <ul>
+                    <li *ngFor="let word of filteredWordList">{{ word.content }}</li>
+                  </ul>
+            </div>
         </div>
         <div class="square-horizontal">
 
