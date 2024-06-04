@@ -6,7 +6,7 @@
                     <input type="text" placeholder="Search words..." [(ngModel)]="searchTermWord" (input)="filterWordList()"/>
                   </div>
                   <ul>
-                    <li *ngFor="let word of filteredWordList">{{ word.content }}</li>
+                    <li *ngFor="let word of filteredWordList" (click)="openModal(word.id)">{{ word.content }}</li>
                   </ul>
             </div>
         </div>

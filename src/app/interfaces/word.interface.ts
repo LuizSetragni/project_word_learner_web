@@ -1,4 +1,4 @@
-export interface wordInterface {
+export interface WordInterface {
     id: number;
     content: string;
     link: string;

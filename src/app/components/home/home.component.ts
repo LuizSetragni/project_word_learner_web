@@ -7,6 +7,9 @@ import { WordListInterface } from '../../interfaces/wordList.interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LinkInterface } from '../../interfaces/link.interface';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { WordInterface } from '../../interfaces/word.interface';
 
 @Component({
   selector: 'app-home',
@@ -16,14 +19,28 @@ import { LinkInterface } from '../../interfaces/link.interface';
   imports: [FormsModule, CommonModule]
 })
 export class HomeComponent implements OnInit {
-  constructor(private wordService: WordService) { }
+  constructor(private wordService: WordService, public dialog: MatDialog) { }
   wordCounts: WeekCountInterface | undefined;
+  wordContent: WordInterface = {
+    id: 0,
+    content: '',
+    link: '',
+    phrase_1: '',
+    phrase_2: '',
+    phrase_3: '',
+    synonym_1: '',
+    synonym_2: '',
+    synonym_3: '',
+    meaning_1: '',
+    meaning_2: '',
+    meaning_3: '',
+    created_at: new Date(),
+    user_id: 0
+  };
   wordList: WordListInterface[] = [];
   linkList: LinkInterface[] = [];
   filteredWordList: WordListInterface[] = [];
   filteredLinkList: LinkInterface[] = [];
-
-
   searchTermWord: string = '';
   searchTermLink: string = '';
   private token: any = localStorage.getItem('token');
@@ -82,6 +99,35 @@ export class HomeComponent implements OnInit {
   filterLinkList() {
     this.filteredLinkList = this.linkList.filter(content => {
       return content.link.toLowerCase().includes(this.searchTermLink.toLowerCase());
+    });
+  }
+
+  openModal(wordId: number) {
+    this.getWordContent(wordId).then(() => {
+      const dialogRef = this.dialog.open(ModalComponent, {
+        width: '1000px',
+        data: this.wordContent,
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('O modal foi fechado');
+      });
+    })
+
+  }
+
+  private getWordContent(wordId: number): Promise<WordInterface> {
+    return new Promise((resolve, rejects) => {
+      this.wordService.getWordContent(wordId).subscribe(
+        (data: WordInterface) => {
+          this.wordContent = data;
+          resolve(data);
+
+        }, error => {
+          console.log('Erro ao obter contagem das palavras', error)
+          rejects(error);
+        }
+      );
     });
   }
 }

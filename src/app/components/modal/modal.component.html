@@ -1,0 +1,16 @@
+<div class="modal">
+  <h2>{{ word.content }}</h2>
+  <p>Link: {{ word.link }}</p>
+  <p>Meaning 1: {{ word.meaning_1 }}</p>
+  <p>Meaning 2: {{ word.meaning_2 }}</p>
+  <p>Meaning 3: {{ word.meaning_3 }}</p>
+  <p>Phrase 1: {{ word.phrase_1 }}</p>
+  <p>Phrase 2: {{ word.phrase_2 }}</p>
+  <p>Phrase 3: {{ word.phrase_3 }}</p>
+  <p>Synonym 1: {{ word.synonym_1 }}</p>
+  <p>Synonym 2: {{ word.synonym_2 }}</p>
+  <p>Synonym 3: {{ word.synonym_3 }}</p>
+  <p>Created At: {{ word.created_at }}</p>
+
+  <button mat-button (click)="close()">Fechar</button>
+</div>
