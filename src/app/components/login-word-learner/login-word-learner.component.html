@@ -47,6 +47,9 @@
       </button>
       
       <span>Ainda não tem uma conta? <a routerLink="/user-register">Cadastre-se</a></span>
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
     </div>
   </div>
   

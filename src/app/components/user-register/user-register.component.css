@@ -1,45 +1,103 @@
-.register-container {
-    font-family: Poppins,sans-serif !important;
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .register-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.square{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  font-size: 40px;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.register-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+label{
+  font-size: 12px;
+}
+
+.email-register{
+  height: 36px;
+  padding: 0;
+  padding-left: var(--spacing-small);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.271);
+  margin-bottom: var(--spacing-medium);
+}
+
+.separator{
+  margin-top: var(--spacing-xxl);
+  width: 400px;
+  display: flex;
+  gap: var(--spacing-small)
+}
+
+.separator-line {
+  align-self: center;
+  border-top: 1px solid #d0d4e4;
+  height: 50%;
+  width: 100%;
+}
+
+.text-separator{
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-google{
+  height: 16px;
+  width: 16px;
+  margin-right: var(--spacing-small);
+}
+
+.button{
+  width: 400px;
+  height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--second-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+} 
+
+.button:hover{
+  background-color: rgba(0, 38, 100, 0.794)
+}
+
+.btn-google {
+  border: 1px solid rgba(0, 0, 0, 0.271);
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  width: 120px;
+  margin-bottom: var(--spacing-xxl);
+  margin-top: var(--spacing-xxl);
+}
+
+.btn-google:hover {
+  background-color: #f0f0f0;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
