@@ -96,7 +96,6 @@ label{
     background-color: #f0f0f0;
 }
 
-
 .password-container {
     display: flex;
     align-items: center;
@@ -122,3 +121,10 @@ label{
     border: 1px solid rgba(0, 0, 0, 0.271);
     margin-bottom: var(--spacing-medium);
 }
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+ }
+

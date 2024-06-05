@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -19,11 +19,16 @@ getErrorMessage(arg0: string) {
 
   passwordVisible: boolean = false;
   loginForm!: FormGroup;
+  successMessage: string | null = null;
 
-  constructor(private loginService: LoginService, private router: Router, 
-    private formBuilder: FormBuilder) { }
+  constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      if (params['message'] === 'success') {
+        this.successMessage = 'Registro bem-sucedido! Por favor, faça login.';
+      }
+    });
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]

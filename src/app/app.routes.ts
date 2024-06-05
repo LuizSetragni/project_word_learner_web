@@ -9,6 +9,7 @@ import { TeamComponent } from './components/team/team.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
+
     {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     {path: 'about', component: AboutComponent},
     {path: 'user-register', component: UserRegisterComponent},
