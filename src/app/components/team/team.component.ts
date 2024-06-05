@@ -18,22 +18,22 @@ interface TeamMember {
 export class TeamComponent {
   teamMembers: TeamMember[] = [
     {
-      name: 'João Silva',
-      role: 'CEO',
+      name: 'Nicolas Emanuel',
+      role: 'Aluno',
       bio: 'João é o fundador e CEO da empresa, com mais de 20 anos de experiência no setor.',
       photo: 'assets/images/nico.png'
     },
     {
-      name: 'Maria Souza',
-      role: 'CTO',
+      name: 'Magali Meireles',
+      role: 'Orientadora',
       bio: 'Maria é a CTO e lidera a equipe de desenvolvimento com foco em inovação e tecnologia.',
-      photo: 'assets/images/teste1.png'
+      photo: 'assets/images/prof.png'
     },
     {
-      name: 'Pedro Santos',
-      role: 'Designer',
+      name: 'Luiz Setragni',
+      role: 'Aluno',
       bio: 'Pedro é responsável pela identidade visual da empresa e experiência do usuário.',
-      photo: 'assets/images/teste2.png'
+      photo: 'assets/images/luiz.png'
     }
   ];
 
