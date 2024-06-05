@@ -1,1 +1,95 @@
-<p>home works!</p>
+<div class="container">
+    <div class="square-left">
+        <div class="box-search">
+            <div class="title">
+                Encontrar palavra
+            </div>
+            <input type="text" placeholder="Procure uma palavra..." [(ngModel)]="searchTermWord"
+                (input)="filterWordList()" />
+            <ul>
+                <li *ngFor="let word of filteredWordList" (click)="openModal(word.id)">
+                    {{ word.content }}
+                </li>
+            </ul>
+        </div>
+        <div class="box-search">
+            <div class="title">
+                Encontrar Links
+            </div>
+            <div>
+                <input type="text" placeholder="Search words..." [(ngModel)]="searchTermLink"
+                    (input)="filterLinkList()" />
+            </div>
+            <ul>
+                <li *ngFor="let content of filteredLinkList" (click)="openModalLink(content.link)">{{ content.link + "|"
+                    + content.count }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="square-rigth">
+        <div class="square-top">
+            <div class="title">Palavras descobertas essa semana</div>
+            <div class="box-week">
+                <div class="box-day">
+                    <small class="title-day">Domingo</small>
+                    <span class="title-result">{{wordCounts?.Sunday}}</span>
+                </div>
+                <div class="box-day">
+                    <small class="title-day">Segunta</small>
+                    <span class="title-result">{{wordCounts?.Monday}}</span>
+                </div>
+                <div class="box-day">
+                    <small class="title-day">Terça</small>
+                    <span class="title-result">{{wordCounts?.Tuesday}}</span>
+                </div>
+                <div class="box-day">
+                    <small class="title-day">Quarta</small>
+                    <span class="title-result">{{wordCounts?.Wednesday}}</span>
+                </div>
+                <div class="box-day">
+                    <small class="title-day">Quinta</small>
+                    <span class="title-result">{{wordCounts?.Thursday}}</span>
+                </div>
+                <div class="box-day">
+                    <small class="title-day">Sexta</small>
+                    <span class="title-result">{{wordCounts?.Friday}}</span>
+                </div>
+                <div class="box-day">
+                    <small class="title-day">Sábado</small>
+                    <span class="title-result">{{wordCounts?.Saturday}}</span>
+                </div>
+            </div>
+            <div class="box-media">
+                <div class="title-media">
+                    Média semanal
+                </div>
+                <span>Durante esta semana, você descobriu {{wordTotalWeek(wordCounts)}}
+                    novas palavras, com uma média impressionante de {{wordCounts?.average}}
+                    palavras por dia. Parabéns!!! </span>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div class="square-bottom">
+            <div class="word-mounth">
+                <div class="title">Palavras nesse mês</div>
+                <div class="box-mounth">
+                    <div class="title-bottom">
+                        <span class="title-day">{{mounth}}</span>
+                        <span class="title-result">{{totalMounth}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="word-learned">
+                <div class="title">Total de palavras aprendidas</div>
+                <div class="box-mounth learning">
+                    <div class="title-bottom">
+                        <span class="title-day">Desde sua inscrição</span>
+                        <span class="title-result ">{{totalMounth}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
