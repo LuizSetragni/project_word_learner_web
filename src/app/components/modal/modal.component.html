@@ -1,16 +1,34 @@
-<div class="modal">
-  <h2>{{ word.content }}</h2>
-  <p>Link: {{ word.link }}</p>
-  <p>Meaning 1: {{ word.meaning_1 }}</p>
-  <p>Meaning 2: {{ word.meaning_2 }}</p>
-  <p>Meaning 3: {{ word.meaning_3 }}</p>
-  <p>Phrase 1: {{ word.phrase_1 }}</p>
-  <p>Phrase 2: {{ word.phrase_2 }}</p>
-  <p>Phrase 3: {{ word.phrase_3 }}</p>
-  <p>Synonym 1: {{ word.synonym_1 }}</p>
-  <p>Synonym 2: {{ word.synonym_2 }}</p>
-  <p>Synonym 3: {{ word.synonym_3 }}</p>
-  <p>Created At: {{ word.created_at }}</p>
+<div class="modal-overlay" (click)="close()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h2>{{word.content}}</h2>
+    <div class="square-top">
+      <div class="box list-top">
+        <h3>Significados</h3>
+        <p>{{ word.meaning_1 }}</p>
+        <p>{{ word.meaning_2 }}</p>
+        <p>{{ word.meaning_3 }}</p>
+      </div>
+      <div class="box list-top">
+        <h3>Sinônimos</h3>
+        <p>{{ word.synonym_1 }}</p>
+        <p>{{ word.synonym_2 }}</p>
+        <p>{{ word.synonym_3 }}</p>
+      </div>
+    </div>
+    <div class="square-bottom">
+      <div class="box list-bottom">
+        <h3>Frases</h3>
+        <p>{{ word.phrase_1 }}</p>
+        <p>{{ word.phrase_2 }}</p>
+        <p>{{ word.phrase_3 }}</p>
+      </div>
+      <div class="box list-bottom">
+        <h3>Anotações</h3>
 
-  <button mat-button (click)="close()">Fechar</button>
+        <input>
+      </div>
+    </div>
+
+
+  </div>
 </div>
