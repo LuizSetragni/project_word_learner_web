@@ -19,6 +19,9 @@ import { WordInterface } from '../../interfaces/word.interface';
   imports: [FormsModule, CommonModule]
 })
 export class HomeComponent implements OnInit {
+totalMounth: any = 1323;
+mounth: any = 'Junho de 2024';
+
   constructor(private wordService: WordService, public dialog: MatDialog) { }
   wordCounts: WeekCountInterface | undefined;
   wordContent: WordInterface = {
@@ -68,7 +71,7 @@ export class HomeComponent implements OnInit {
       this.wordService.getWordList(JwtUtils.globalUserId).subscribe(
         (data: WordListInterface[]) => {
           this.wordList = data;
-          this.filteredWordList = this.wordList.slice(0, 10);
+          this.filteredWordList = this.wordList;
         }, error => {
           console.log('Erro ao obter lista de palavras', error)
         }
@@ -82,7 +85,7 @@ export class HomeComponent implements OnInit {
       this.wordService.getLinkList(JwtUtils.globalUserId).subscribe(
         (data: LinkInterface[]) => {
           this.linkList = data;
-          this.filteredLinkList = this.linkList.slice(0, 10);
+          this.filteredLinkList = this.linkList;
         }, error => {
           console.log('Erro ao obter lista de palavras', error)
         }
@@ -113,7 +116,6 @@ export class HomeComponent implements OnInit {
         console.log('O modal foi fechado');
       });
     })
-
   }
 
   private getWordContent(wordId: number): Promise<WordInterface> {
@@ -130,4 +132,38 @@ export class HomeComponent implements OnInit {
       );
     });
   }
+
+  wordTotalWeek(wordCounts: WeekCountInterface | undefined): number {
+    if (!wordCounts) { return 0 }
+    const { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday } = wordCounts;
+    return Monday + Tuesday + Wednesday + Thursday + Friday + Saturday + Sunday;
+  }
+
+  openModalLink(link: string) {
+    // this.getWordContent(link).then(() => {
+      // const dialogRef = this.dialog.open(ModalComponent, {
+      //   width: '1000px',
+      //   data: this.wordContent,
+      // });
+
+      // dialogRef.afterClosed().subscribe(result => {
+      //   console.log('O modal foi fechado');
+      // });
+    // })
+  }
+
+  // private getWordContent(wordId: number): Promise<WordInterface> {
+  //   return new Promise((resolve, rejects) => {
+  //     this.wordService.getWordContent(wordId).subscribe(
+  //       (data: WordInterface) => {
+  //         this.wordContent = data;
+  //         resolve(data);
+
+  //       }, error => {
+  //         console.log('Erro ao obter contagem das palavras', error)
+  //         rejects(error);
+  //       }
+  //     );
+  //   });
+  // }
 }
