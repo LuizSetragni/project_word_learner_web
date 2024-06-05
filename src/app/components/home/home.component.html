@@ -12,7 +12,7 @@
                 </li>
             </ul>
         </div>
-        <div class="box-search">
+        <div class="box-search" style="background-color: #ffff;">
             <div class="title">
                 Encontrar Links
             </div>
@@ -21,8 +21,11 @@
                     (input)="filterLinkList()" />
             </div>
             <ul>
-                <li *ngFor="let content of filteredLinkList" (click)="openModalLink(content.link)">{{ content.link + "|"
-                    + content.count }}</li>
+                <li *ngFor="let content of filteredLinkList" (click)="openModalLink(content.link)">
+                    <span class="link-text">{{ formatLink(content.link) }}</span>
+                    <br>
+                    <span class="word-count">{{ content.count }} palavras</span>
+                </li>
             </ul>
         </div>
     </div>

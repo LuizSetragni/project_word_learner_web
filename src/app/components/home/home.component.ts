@@ -166,4 +166,12 @@ mounth: any = 'Junho de 2024';
   //     );
   //   });
   // }
+
+  formatLink(link: string): string {
+    let formattedLink = link.replace(/^https?:\/\/(www\.)?/, '');
+    if (formattedLink.endsWith('/')) {
+      formattedLink = formattedLink.slice(0, -1);
+    }
+    return formattedLink;
+  }
 }
