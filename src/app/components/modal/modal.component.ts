@@ -1,11 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { WordInterface } from '../../interfaces/word.interface';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
@@ -25,8 +26,10 @@ export class ModalComponent implements OnInit {
     meaning_2: '',
     meaning_3: '',
     created_at: new Date(),
-    user_id: 0
+    user_id: 0,
+    read: false,
   };
+text: any;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
