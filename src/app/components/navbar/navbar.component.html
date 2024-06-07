@@ -1,6 +1,15 @@
-<div *ngIf="displayNavbar()">
+<div class="container" *ngIf="displayNavbar()">
     <a class="header" routerLink="/home">
-        <img class="logo" src="assets/images/eua.png" alt="Bandeira EUA">
-        <h3>WORD LEARNER</h3>
+        <img class="logo" src="assets/images/logo.png" alt="Bandeira EUA">
+        <span>word learner</span>
     </a>
+    <div *ngIf="!isLogado" class="login">
+        <button class="login" (click)="openRouter('login')">Login</button>
+        <button class="register" (click)="openRouter('register')">Cadastrar</button>
+    </div>
+    <div *ngIf="isLogado" class="box-user">
+        <img class="user-img" src="assets/images/user.png">
+        <div class="name-user">{{userName}}</div> 
+    </div>
+
 </div>
