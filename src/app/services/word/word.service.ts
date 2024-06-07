@@ -64,5 +64,27 @@ export class WordService {
     return this.httpClient.get<TotalWordInterface>(url, { headers });
   }
 
+  updateWordAnnotation(wordId: number, annotation: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/word/${wordId}/update_annotation/`;
+    const body = { annotation };
+    return this.httpClient.post(url, body, { headers });
+  }
+
+  getWordsByLink(link: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    const body = {
+      link: link
+    };
+
+    return this.httpClient.post(`${this.API_URL}/words/by_link/`, body, { headers: headers });
+  }
+
 
 }

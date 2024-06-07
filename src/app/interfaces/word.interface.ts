@@ -14,4 +14,5 @@ export interface WordInterface {
     created_at: Date;
     user_id: number;
     read: boolean;
+    annotation: string;
 }
