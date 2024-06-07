@@ -3,7 +3,6 @@ import { Router, ActivatedRoute  } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { JwtUtils } from '../../utils/jwtUtils';
 
 @Component({
   selector: 'app-login-word-learner',
@@ -21,7 +20,12 @@ getErrorMessage(arg0: string) {
   loginForm!: FormGroup;
   successMessage: string | null = null;
 
-  constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute) { }
+  constructor(
+    private loginService: LoginService, 
+    private router: Router, 
+    private formBuilder: FormBuilder, 
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -51,9 +55,8 @@ getErrorMessage(arg0: string) {
 
     this.loginService.login(credentials).subscribe(
       response => {
-        console.log('Login Bem-Sucedido', response.access);
         localStorage.setItem('token', response.access);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/progress']);
       },
       error => {
         console.log('Erro de login', error);
