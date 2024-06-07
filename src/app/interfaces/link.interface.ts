@@ -1,4 +1,5 @@
 export interface LinkInterface {
     link: string;
-    count: number;
+    total_count: number;
+    read_count: number;
 }

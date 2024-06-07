@@ -1,10 +1,34 @@
 export interface WeekCountInterface {
-    Monday: number;
-    Tuesday: number;
-    Wednesday: number;
-    Thursday: number;
-    Friday: number;
-    Saturday: number;
-    Sunday: number;
-    average: number;
+    Monday: {
+        total_count: number;
+        read_count: number;
+    };
+    Tuesday: {
+        total_count: number;
+        read_count: number;
+    };
+    Wednesday: {
+        total_count: number;
+        read_count: number;
+    };
+    Thursday: {
+        total_count: number;
+        read_count: number;
+    };
+    Friday: {
+        total_count: number;
+        read_count: number;
+    };
+    Saturday: {
+        total_count: number;
+        read_count: number;
+    };
+    Sunday: {
+        total_count: number;
+        read_count: number;
+    };
+    average_total: number;
+    average_read: number;
+    total_total_count: number;
+    total_read_count: number;
 }

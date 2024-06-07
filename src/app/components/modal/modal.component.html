@@ -1,6 +1,10 @@
 <div class="modal-overlay" (click)="close()">
   <div class="modal" (click)="$event.stopPropagation()">
-    <h2>{{word.content}}</h2>
+    <div class="title-word">
+      <h2>{{word.content}}</h2>
+      <p>{{word.link}}</p>
+      <div class="lida">Lida</div>
+    </div>
     <div class="square-top">
       <div class="box list-top">
         <h3>Significados</h3>
@@ -24,11 +28,8 @@
       </div>
       <div class="box list-bottom">
         <h3>Anotações</h3>
-
-        <input>
+          <textarea id="multilineInput" [(ngModel)]="text" rows="6" cols="102"></textarea>
       </div>
     </div>
-
-
   </div>
 </div>
