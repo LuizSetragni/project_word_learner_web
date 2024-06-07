@@ -13,4 +13,6 @@ export interface WordInterface {
     meaning_3: string;
     created_at: Date;
     user_id: number;
+    read: boolean;
+    annotation: string;
 }

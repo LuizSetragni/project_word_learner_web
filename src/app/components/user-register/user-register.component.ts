@@ -31,7 +31,7 @@ export class UserRegisterComponent {
     if (this.registerForm.valid) {
       this.userService.registerUser(this.registerForm.value).subscribe(response => {
         console.log("Usuario criado com sucesso:", response);
-        this.router.navigate(['/login-word-learner'], { queryParams: { message: 'success' } });
+        this.router.navigate(['/login'], { queryParams: { message: 'success' } });
       }, error => {
         console.log("Erro: ", error);
       })

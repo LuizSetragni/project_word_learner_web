@@ -5,6 +5,7 @@ import { WeekCountInterface } from '../../interfaces/weekCount.interface';
 import { WordListInterface } from '../../interfaces/wordList.interface';
 import { LinkInterface } from '../../interfaces/link.interface';
 import { WordInterface } from '../../interfaces/word.interface';
+import { TotalWordInterface } from '../../interfaces/totalWord.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -46,4 +47,44 @@ export class WordService {
 
     return this.httpClient.get<LinkInterface[]>(url, {headers});
   }
+
+  getTotalWordMonth(userId: number, month: number): Observable<number>{
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/total-words-count/${month}/${userId}/`;
+
+    return this.httpClient.get<number>(url, {headers});
+  }
+
+  getTotalWordPerUser(): Observable<TotalWordInterface> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/total-words-per-user/`;
+  
+    return this.httpClient.get<TotalWordInterface>(url, { headers });
+  }
+
+  updateWordAnnotation(wordId: number, annotation: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url = `${this.API_URL}/word/${wordId}/update_annotation/`;
+    const body = { annotation };
+    return this.httpClient.post(url, body, { headers });
+  }
+
+  getWordsByLink(link: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    });
+
+    const body = {
+      link: link
+    };
+
+    return this.httpClient.post(`${this.API_URL}/words/by_link/`, body, { headers: headers });
+  }
+
+
 }

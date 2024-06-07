@@ -1,13 +1,90 @@
-.header{
-    height: 100px;
+.container {
     width: 100%;
-    background-color: white;
+    height: 73px;
+    background-color: #FFFFFF;
+    border-bottom: solid 2px #EBEBEB;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    color: var(--primary-color);
-    border-bottom: rgb(220, 220, 220) solid 1px;
+    color: black;
 }
 
-.logo{
-    height: 44px;
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin-left: 88px;
+    margin-right: 20px;
+    width: 52px;
+    height: 27px;
+}
+
+span {
+    font-family: Mulish;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.08px;
+    text-align: left;
+    color: var(--color-text);
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login:hover{
+    color: #da1e417b;
+
+}
+
+.register {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--third-color);
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 88px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.login{
+    border: none;
+    background-color: white;
+    color: #DA1E40;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.name-user{
+    font-family: Mulish;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--color-text);
+}
+
+.user-img{
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.box-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 88px;
+}
+
+.register:hover{
+    background-color: #da1e417b;
 }

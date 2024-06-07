@@ -1,10 +1,10 @@
 :root{
     /* colors */
-    --primary-color: rgb(87, 155, 252);
+    --primary-color: #093163;
     --second-color: rgb(255, 255, 255);
-    --third-color: rgb(240, 64, 149);
+    --third-color: #DA1E40;;
 
-    --color-text: rgb(0, 0, 0);
+    --color-text: #202020;
     
     /* sizes */
     --spacing-small: 8px;
