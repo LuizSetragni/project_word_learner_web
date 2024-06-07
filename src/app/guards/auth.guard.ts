@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       this.authService.logout();
-      this.router.navigate(['/login-word-learner']); 
+      this.router.navigate(['/login']); 
       return false;
     }
   }
