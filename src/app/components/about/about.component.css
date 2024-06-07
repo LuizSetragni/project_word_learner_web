@@ -1,105 +1,162 @@
-.content {
-    margin-top: 170px;
-    margin-bottom: 170px;
+.full-height {
+    height: 92vh;
 }
-.about-us-container {
-    color: #323338;
-    padding: 12px 0 111px;
+
+.primary-frame {
+    background-color: rgb(249, 249, 249);
     display: flex;
-    align-items: center;
+}
+
+.square-left{
+    width: 50%;
+}
+
+.title{
+    padding-left: 88px;
+    color: var(--primary-color);
+    font-size: 48px;
+    font-family: Mulish;
+    font-weight: 600;
+    height: 120px;
+    width: 424px;
+    margin: 175px 0 25px 0;
+}
+.text{
+    padding: 0 88px;
+    color: var(--color-text);
+    font-weight: 300;
+    font-size: 16px;
+    font-family: Mulish;
+    width: 421px;
+    height: 60px;
+    margin-bottom: 35px;
+}
+
+.square-rigth{
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+.primary-img{
+    margin-top: 135px;
+    width: auto;
+    height: 550px;
+}
+
+img{
+    height: 100%;
+    width: auto;
+}
+
+.second-frame {
+    background-color: #FFF;
+    display: flex;
+}
+
+.third-frame {
+    background-color: rgb(249, 249, 249);
+    background-image: url('/assets/images/frame.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
     justify-content: center;
-    overflow: hidden;
-}
-
-.about-us-container p {
-    line-height: 1.7;
-    font-weight: 320;
-    font-size: 1.2rem;
-}
-
-.about-us-container .row {
-    display: flex;
     align-items: center;
 }
 
-.about-us-container .row {
-    align-items: center;
-    align-content: center;
-    margin-bottom: -23px !important;
-}
-
-.about-us-container .col-lg-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.about-us-container h1 {
-    font-family: Poppins,sans-serif !important;
-    font-size: 4.2rem;
+.register {
+    width: 186px;
+    height: 54px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--third-color);
+    color: #FFF;
+    font-size: 18px;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    cursor: pointer;
 }
 
-.about-us-container h1 span {
-    font-weight: 700;
-}
-
-.about-us-container .side-left {
-    position: relative;
-}
-
-.section {
-    position: relative;
-    width: 100%;
-}
-
-.section-who-are {
-    position: relative;
-    width: 100%;
-    padding: 100px 250px
-}
-
-.container {
-    max-width: 1240px;
-}
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.text-justify {
-    text-align: justify;
+.register:hover{
+    background-color: #da1e417b;
 }
 
 .button{
-    width: 400px;
-    height: 40px;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--second-color);
+    padding: 0 88px;
+}
+
+.box-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-bottom{
+    width: 472px;
+    font-size: 48px;
+    font-family: Mulish;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.box-right{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-lefth{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 88px;
+}
+
+.title-second{
+    font-family: Mulish;
+    font-weight: 600;
+    font-size: 48px;
+    color: #DA1E40;
+    width: 398px;
+    height: 76px;
+}
+
+.operation{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.box-number{
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-} 
+    font-family: Mulish;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: var(--third-color);
+    color: white;
+    border-radius: 10px;
+    margin-right: 20px;
+}
 
-.button:hover{
-    background-color: rgba(0, 38, 100, 0.794)
+.text-operation{
+    font-size: 16px;
+    font-family: Mulish;
+    font-weight: 400;
+    color: var(--color-text);
+    width: 254px;
+
 }

@@ -1,80 +1,66 @@
-<div class="content">
-    <section class="section about-us-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 side-left">
-                    <div class="text">
-                        <h1>
-                            Então, o que é o<br/>
-                            <span style="color: #6c6cff;">Word Learner?</span>
-                            <br/>
-                        </h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 side-right">
-                    <div class="text">
-                        <p class="text-justify">O Word Learner é uma aplicação web que permite que você aprenda novas palavras em inglês de forma simples e eficiente. Com o Word Learner, você pode aprender novas palavras em inglês de forma rápida e prática.</p>
-                        <button (click)="goToLogin()" class="button">Ir para Login</button>
-                    </div>
-                </div>
+<div class="container">
+    <div class="primary-frame full-height">
+        <div class="square-left">
+            <div class="title">
+                Uma nova forma de aprender inglês
+            </div>
+            <div class="text">
+                O Word Learner é um aplicativo que permite que você aprenda novas
+                 palavras em inglês de forma simples a partir dos sites que você
+                  acessa todos os dias.
+            </div>
+            <div class="button">
+                <button *ngIf="!isLogado" class="register" (click)="openRouter('register')">Cadastrar</button>
+                <button *ngIf="isLogado" class="register" (click)="openRouter('progress')">Progresso</button>
             </div>
         </div>
-    </section>
-    <section class="section-who-are about-us-container">
-        <img src="https://www.kindpng.com/picc/m/336-3368435_learning-english-png-transparent-png.png" alt="Learning English Png, Transparent Png@kindpng.com">
-        <div class="container" style="margin-left: 50px;">
-            <div class="row">
-                <div class="col-lg-6 side-left">
-                    <div class="text" style="color: var(--primary-color);">
-                        <h1>
-                            Quem somos?
-                        </h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 side-right">
-                    <div class="text">
-                        <p class="text-justify">Somos uma equipe de desenvolvedores que tem como objetivo ajudar pessoas a aprender novas palavras em inglês de forma simples e eficiente.</p>
-                    </div>
-                </div>
+        <div class="square-rigth">
+            <div class="primary-img">
+                <img src="assets/images/caraBonito.png"/>
             </div>
         </div>
-    </section>
-    <section class="section about-us-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 side-left">
-                    <div class="text" style="color: var(--third-color);">
-                        <h1>
-                            O que fazemos?
-                        </h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 side-right">
-                    <div class="text" class="text-justify">
-                        <p>Desenvolvemos um aplicativo que permite que você aprenda novas palavras em inglês de forma simples e eficiente. Com o Word Learner, você pode aprender novas palavras em inglês de forma rápida e prática.</p>
-                    </div>
-                </div>
+    </div>
+    <div class="second-frame full-height">
+        <div class="box-lefth">
+            <div class="title-second">Como funciona</div>
+            <div class="operation">
+                <div class="box-number">1</div>
+                <div class="text-operation">Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit. Mauris efficitur aliquam a</div>
+            </div>
+            <div class="operation">
+                <div class="box-number">2</div>
+                <div class="text-operation">Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit. Mauris efficitur aliquam a</div>
+            </div>
+            <div class="operation">
+                <div class="box-number">3</div>
+                <div class="text-operation">Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit. Mauris efficitur aliquam a</div>
+            </div>
+            <div class="operation">
+                <div class="box-number">4</div>
+                <div class="text-operation">Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit. Mauris efficitur aliquam a</div>
+            </div>
+            <div class="operation">
+                <div class="box-number">5</div>
+                <div class="text-operation">Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit. Mauris efficitur aliquam a</div>
+            </div>
+
+        </div>
+        <div class="box-right">
+            <div class="second-img">
+                <img src="assets/images/pc.png"/>
             </div>
         </div>
-    </section>
-    <section class="section about-us-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 side-left">
-                    <div class="text" style="color: rgb(0, 200, 117);">
-                        <h1>
-                            Como funciona?
-                        </h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 side-right">
-                    <div class="text">
-                        <p class="text-justify">O Word Learner é um aplicativo que permite que você aprenda novas palavras em inglês de forma simples e eficiente. Com o Word Learner, você pode aprender novas palavras em inglês de forma rápida e prática.</p>
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="third-frame full-height">
+        <div class="box-bottom">
+            <span class="text-bottom">Aumente seu vocabulário de inglês de forma simples e rápida</span>
+            <button *ngIf="!isLogado" class="register" (click)="openRouter('register')">Cadastrar</button>
+            <button *ngIf="isLogado" class="register" (click)="openRouter('progress')">Progresso</button>
         </div>
-    </section>
+    </div>
 </div>
