@@ -1,0 +1,12 @@
+<div class="modal-overlay" (click)="close()">
+  <div class="modal" (click)="$event.stopPropagation()">
+
+    <div class="list-recent">
+      <ul class="multi-column-list">
+        <li *ngFor="let word of data" (click)="openModal(word.id)">
+          {{ word.content }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

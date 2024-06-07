@@ -180,15 +180,14 @@
             </div>
             <div class="box-link">
                 <ul>
-                    <li *ngFor="let content of filteredLinkList; let i = index" (click)="openModal(200)">
+                    <li *ngFor="let content of filteredLinkList; let i = index" (click)="openModalLink(content.link)">
                         <span>#{{i + 1}}</span>
                         <span class="link-text">{{ formatLink(content.link) }}</span>
                         <span>{{ content.read_count}} palavras aprendidas</span>
                         <span>{{ content.total_count }} palavras encontradas</span>
                     </li>
                 </ul>
-
-              </div>
+            </div>
         </div>
     </div>
 </div>

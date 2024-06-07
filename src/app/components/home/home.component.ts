@@ -11,6 +11,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { WordInterface } from '../../interfaces/word.interface';
 import { TotalWordInterface } from '../../interfaces/totalWord.interface';
+import { ModalLinkComponent } from '../modalLink/modalLink.component';
 
 @Component({
   selector: 'app-home',
@@ -20,11 +21,11 @@ import { TotalWordInterface } from '../../interfaces/totalWord.interface';
   imports: [FormsModule, CommonModule]
 })
 export class HomeComponent implements OnInit {
-  month: any = 'Junho de 2024';
   nameMonth: string[] = [];
   totalMonth: number[] = [];
   totalCountMonth: number = 0;
   totalWordPerUser: TotalWordInterface | undefined;
+  wordListLink: WordListInterface[] = [];
 
 
   constructor(
@@ -48,6 +49,7 @@ export class HomeComponent implements OnInit {
     created_at: new Date(),
     user_id: 0,
     read: false,
+    annotation: ''
   };
   wordList: WordListInterface[] = [];
   linkList: LinkInterface[] = [];
@@ -195,7 +197,6 @@ export class HomeComponent implements OnInit {
       this.wordService.getTotalWordPerUser().subscribe(
         (data: TotalWordInterface) => {
           this.totalWordPerUser = data;
-          console.log(data)
         }, error => {
           console.log('Erro ao obter total de words', error);
         }
@@ -236,4 +237,31 @@ export class HomeComponent implements OnInit {
       default: return 'Mês';
     }
   }
+
+  openModalLink(wordId: string) {
+    this.getWordListLink(wordId).then(() => {
+      const dialogRef = this.dialog.open(ModalLinkComponent, {
+        width: '1000px',
+        data: this.wordListLink,
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        this.updatePage();
+        console.log('O modal foi fechado');
+      });
+    })
+  }
+
+  getWordListLink(link: string): Promise<WordInterface> {
+    return new Promise((resolve, rejects) => {
+      this.wordService.getWordsByLink(link).subscribe(response => {
+        this.wordListLink = response.words;
+        resolve(response);
+      }, error => {
+        console.error(error);
+        rejects(error);
+      });
+    });
+  }
 }
+
