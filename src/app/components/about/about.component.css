@@ -157,6 +157,6 @@ img{
     font-family: Mulish;
     font-weight: 400;
     color: var(--color-text);
-    width: 254px;
-
+    width: 449px;
+    text-align: justify;
 }

@@ -238,11 +238,14 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  openModalLink(wordId: string) {
-    this.getWordListLink(wordId).then(() => {
+  openModalLink(link: string) {
+    this.getWordListLink(link).then(() => {
       const dialogRef = this.dialog.open(ModalLinkComponent, {
         width: '1000px',
-        data: this.wordListLink,
+        data: {
+          wordList: this.wordListLink,
+          link: link
+        }
       });
 
       dialogRef.afterClosed().subscribe(result => {
