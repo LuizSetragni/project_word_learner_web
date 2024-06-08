@@ -1,9 +1,12 @@
 <div class="modal-overlay" (click)="close()">
   <div class="modal" (click)="$event.stopPropagation()">
-
+    <a href={{data.link}} target="_blank">
+    <h2>{{data.link}}</h2>
+  </a>
     <div class="list-recent">
       <ul class="multi-column-list">
-        <li *ngFor="let word of data" (click)="openModal(word.id)">
+        <li *ngFor="let word of data.wordList" (click)="openModal(word.id)" 
+          [ngClass]="{'text-red': word.read}">
           {{ word.content }}
         </li>
       </ul>
